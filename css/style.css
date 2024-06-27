@@ -14,11 +14,15 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin: 0; /* Adicionando margem zero para evitar espaçamento extra */
     color: white;
 }
 
 canvas {
     background-color: #111;
+    max-width: 100%; /* O canvas não será maior que a largura da tela */
+    height: auto; /* Permite que a altura se ajuste proporcionalmente */
+    border: 1px solid #fff; /* Adicionando borda branca para melhor visualização */
 }
 
 .score {
@@ -67,4 +71,44 @@ canvas {
     justify-content: center;
     gap: 5px;
     cursor: pointer;
+}
+
+.mobile-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.control-btn {
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.control-btn:focus {
+    outline: none;
+}
+
+@media (min-width: 768px) {
+    /* Ajustes para telas maiores, por exemplo, desktops */
+    canvas {
+        max-width: 80%; /* Reduz a largura máxima do canvas para desktops */
+    }
+
+    .btn-play {
+        padding: 12px 25px; /* Ajusta o padding do botão para desktops */
+    }
+}
+
+@media (min-width: 768px) {
+    .mobile-controls {
+        display: none; /* Esconde os controles no desktop */
+    }
 }

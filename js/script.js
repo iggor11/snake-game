@@ -196,3 +196,28 @@ buttonPlay.addEventListener("click", () => {
 
     snake = [initialPosition]
 })
+
+// Event listeners para os botões de controle
+document.getElementById('btn-up').addEventListener('click', () => {
+    if (direction !== 'down') {
+        direction = 'up';
+    }
+});
+
+document.getElementById('btn-left').addEventListener('click', () => {
+    if (direction !== 'right') {
+        direction = 'left';
+    }
+});
+
+document.getElementById('btn-right').addEventListener('click', () => {
+    if (direction !== 'left') {
+        direction = 'right';
+    }
+});
+
+document.getElementById('btn-down').addEventListener('click', () => {
+    if (direction !== 'up') {
+        direction = 'down';
+    }
+});
