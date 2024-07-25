@@ -1,42 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="./css/style.css">
-    
-    <title>Snake Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake RGB</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 </head>
 <body>
-    <div class="score">Pontos: <span class="score--value">00</span></div>
+  <h1>
+    Snake
+    <span style="color: red">G</span>
+    <span style="color: green">A</span>
+    <span style="color: blue">M</span>
+    <span style="color: yellow">E</span>
+  </h1>
 
-    <div class="menu-screen">
-        <span class="fim-de-jogo">Você Perdeu</span>
-        <span class="pontos-finais">Pontuação: <span>00</span></span>
+  <div class="settings">
+    <label for="speed-selector">Speed:</label>
+    <select id="speed-selector">
+      <option value="0">Very Slow</option>
+      <option value="1">Slow</option>
+      <option value="2" selected>Normal</option>
+      <option value="3">Fast</option>
+      <option value="4">Very Fast</option>
+    </select>
 
-        <button class="btn-play">
-            <span class="material-symbols-outlined">
-                play_circle
-            </span>
-            
-            Jogar novamente
-        </button>
+    <span class="spacer"></span>
+
+    <label for="difficulty-selector">Difficulty:</label>
+    <select id="difficulty-selector">
+      <option value="easy">Easy</option>
+      <option value="normal" selected>Normal</option>
+      <option value="hard">Hard</option>
+    </select>
+  </div>
+
+  <div class="score-container">
+    <div class="score">Score: <span class="score-value">00</span></div>
+    <div class="highest-score">
+      High Score: <span class="highest-score-value">00</span>
     </div>
+  </div>
 
-    <div class="mobile-controls">
-        <button class="control-btn" id="btn-up">↑</button>
-        <div>
-            <button class="control-btn" id="btn-left">←</button>
-            <button class="control-btn" id="btn-right">→</button>
-        </div>
-        <button class="control-btn" id="btn-down">↓</button>
-    </div>
+  <div class="menu-screen">
+    <span class="game-over">Game Over</span>
+    <span class="final-score">Score <span>00</span></span>
+    <button class="btn-play">
+      <span class="material-symbols-outlined">play_circle</span>
+      Jogar Novamente
+    </button>
+  </div>
 
+  <canvas id="gameCanvas" width="600" height="600"></canvas>
 
-    <canvas width="600" height="600"></canvas>
-    <script src="./js/script.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 </html>

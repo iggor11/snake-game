@@ -1,114 +1,93 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppings", sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&family=Pixelify+Sans&display=swap");
 
 body {
-    background-color: #191919;
-    display: flex;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 0; /* Adicionando margem zero para evitar espaçamento extra */
-    color: white;
+  background-color: #191919;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Pixelify Sans', cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: .2rem;
 }
 
 canvas {
-    background-color: #111;
-    max-width: 100%; /* O canvas não será maior que a largura da tela */
-    height: auto; /* Permite que a altura se ajuste proporcionalmente */
-    border: 1px solid #fff; /* Adicionando borda branca para melhor visualização */
+  background-color: #111;
 }
 
-.score {    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1.8rem;
+.settings {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.score--value {
-    font-weight: 700;
-    font-size: 4.5rem;
-    display: block;
-    margin-top: -10px;
+.settings label,
+.settings select {
+  margin-left: 5px;
+}
+
+.spacer {
+  margin-right: 20px;
+}
+
+.score-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.score-value,
+.highest-score-value {
+  font-weight: 700;
+}
+
+.score-value {
+  margin-right: 8rem;
 }
 
 .menu-screen {
-    position: absolute;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1;
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .game-over {
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
 .final-score {
-    font-weight: 500;
-    font-size: 1.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .btn-play {
-    border: none;
-    border-radius: 100px;
-    padding: 10px 15px 10px 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #333;
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    cursor: pointer;
-}
-
-.mobile-controls {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.control-btn {
-    background-color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0 10px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.control-btn:focus {
-    outline: none;
-}
-
-@media (min-width: 768px) {
-    /* Ajustes para telas maiores, por exemplo, desktops */
-    canvas {
-        max-width: 80%; /* Reduz a largura máxima do canvas para desktops */
-    }
-
-    .btn-play {
-        padding: 12px 25px; /* Ajusta o padding do botão para desktops */
-    }
-}
-
-@media (min-width: 768px) {
-    .mobile-controls {
-        display: none; /* Esconde os controles no desktop */
-    }
+  border: none;
+  border-radius: 100px;
+  padding: 10px 15px 10px 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
 }
